@@ -7,8 +7,7 @@ const jsfiles  = [
   'builder.js',
   'reconstructor.js',
   'controls.js',
-  'eventlisteners.js',
-  'overlord.js'
+  'eventlisteners.js'
 ];
 
 // ── 2) loadAssets: inject each CSS/JS in order ─────────────────────────────
