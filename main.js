@@ -10,7 +10,6 @@ const jsfiles  = [
   'eventlisteners.js'
 ];
 
-// ── 2) loadAssets: inject each CSS/JS in order ─────────────────────────────
 function loadAssets(baseUrl, version) {
   return new Promise((resolve, reject) => {
     const head = document.head;
@@ -19,9 +18,7 @@ function loadAssets(baseUrl, version) {
     let loaded = 0;
 
     function checkDone() {
-      if (++loaded === total) {
-        resolve();
-      }
+      if (++loaded === total) resolve();
     }
 
     if (total === 0) {
@@ -29,8 +26,7 @@ function loadAssets(baseUrl, version) {
       return;
     }
 
-    // 2a) insert all CSS
-    cssfiles.forEach(function(file) {
+    cssfiles.forEach(file => {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = fullPath + 'css/' + file;
@@ -39,8 +35,7 @@ function loadAssets(baseUrl, version) {
       head.appendChild(link);
     });
 
-    // 2b) insert all JS (with defer)
-    jsfiles.forEach(function(file) {
+    jsfiles.forEach(file => {
       const script = document.createElement('script');
       script.src = fullPath + 'js/' + file;
       script.defer = true;
@@ -51,8 +46,24 @@ function loadAssets(baseUrl, version) {
   });
 }
 
-// ── 3) initapp: after CSS/JS are in the DOM, start your SVG‐loader logic ───
-async function initapp(baseUrl, version) {
-  await loadAssets(baseUrl, version);
-  console.log("testing");
+function initapp(baseUrl, version) {
+  loadAssets(baseUrl, version).then(() => {
+    const fileInput = document.getElementById('fileInput');
+    fileInput.addEventListener('change', () => {
+      loadSvgFile()
+        .then(contents => {
+          svgobj = parseSVGContents(contents);
+          svgobj.districts = svgobj.districts
+            .map(d => wrapDistrictInGroup(d))
+            .filter(Boolean);
+          displaySVG(svgobj);
+          fileInput.classList.add('hidden');
+          setViewportToWindow();
+          storeOriginalViewBox();
+          setMouseInputEventListeners();
+          document.querySelector('svg')?.focus();
+        })
+        .catch(error => console.error(error));
+    });
+  }).catch(error => console.error(error));
 }
