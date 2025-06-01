@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(to bottom, #a5acb8, #889094);
+    background-attachment: fixed;
+    color: #333;
+}
+
+.district {
+    cursor: pointer;
+}
+
+#map-container{
+    
+    border: solid #817d7d;
+    border-radius: 3px;
+}
+
+.hidden{
+    display:none;
+}
+
+.fill-1  { fill: hsl(0deg, 50%, 75%); }
+.fill-2  { fill: hsl(3.6deg, 50%, 75%); }
+.fill-3  { fill: hsl(7.2deg, 50%, 75%); }
+.fill-4  { fill: hsl(10.8deg, 50%, 75%); }
+.fill-5  { fill: hsl(14.4deg, 50%, 75%); }
+.fill-6  { fill: hsl(18deg, 50%, 75%); }
+.fill-7  { fill: hsl(21.6deg, 50%, 75%); }
+.fill-8  { fill: hsl(25.2deg, 50%, 75%); }
+.fill-9  { fill: hsl(28.8deg, 50%, 75%); }
+.fill-10 { fill: hsl(32.4deg, 50%, 75%); }
+.fill-11 { fill: hsl(36deg, 50%, 75%); }
+.fill-12 { fill: hsl(39.6deg, 50%, 75%); }
+.fill-13 { fill: hsl(43.2deg, 50%, 75%); }
+.fill-14 { fill: hsl(46.8deg, 50%, 75%); }
+.fill-15 { fill: hsl(50.4deg, 50%, 75%); }
+.fill-16 { fill: hsl(54deg, 50%, 75%); }
+.fill-17 { fill: hsl(57.6deg, 50%, 75%); }
+.fill-18 { fill: hsl(61.2deg, 50%, 75%); }
+.fill-19 { fill: hsl(64.8deg, 50%, 75%); }
+.fill-20 { fill: hsl(68.4deg, 50%, 75%); }
+.fill-21 { fill: hsl(72deg, 50%, 75%); }
+.fill-22 { fill: hsl(75.6deg, 50%, 75%); }
+.fill-23 { fill: hsl(79.2deg, 50%, 75%); }
+.fill-24 { fill: hsl(82.8deg, 50%, 75%); }
+.fill-25 { fill: hsl(86.4deg, 50%, 75%); }
+.fill-26 { fill: hsl(90deg, 50%, 75%); }
+.fill-27 { fill: hsl(93.6deg, 50%, 75%); }
+.fill-28 { fill: hsl(97.2deg, 50%, 75%); }
+.fill-29 { fill: hsl(100.8deg, 50%, 75%); }
+.fill-30 { fill: hsl(104.4deg, 50%, 75%); }
+.fill-31 { fill: hsl(108deg, 50%, 75%); }
+.fill-32 { fill: hsl(111.6deg, 50%, 75%); }
+.fill-33 { fill: hsl(115.2deg, 50%, 75%); }
+.fill-34 { fill: hsl(118.8deg, 50%, 75%); }
+.fill-35 { fill: hsl(122.4deg, 50%, 75%); }
+.fill-36 { fill: hsl(126deg, 50%, 75%); }
+.fill-37 { fill: hsl(129.6deg, 50%, 75%); }
+.fill-38 { fill: hsl(133.2deg, 50%, 75%); }
+.fill-39 { fill: hsl(136.8deg, 50%, 75%); }
+.fill-40 { fill: hsl(140.4deg, 50%, 75%); }
+.fill-41 { fill: hsl(144deg, 50%, 75%); }
+.fill-42 { fill: hsl(147.6deg, 50%, 75%); }
+.fill-43 { fill: hsl(151.2deg, 50%, 75%); }
+.fill-44 { fill: hsl(154.8deg, 50%, 75%); }
+.fill-45 { fill: hsl(158.4deg, 50%, 75%); }
+.fill-46 { fill: hsl(162deg, 50%, 75%); }
+.fill-47 { fill: hsl(165.6deg, 50%, 75%); }
+.fill-48 { fill: hsl(169.2deg, 50%, 75%); }
+.fill-49 { fill: hsl(172.8deg, 50%, 75%); }
+.fill-50 { fill: hsl(176.4deg, 50%, 75%); }
+.fill-51 { fill: hsl(180deg, 50%, 75%); }
+.fill-52 { fill: hsl(183.6deg, 50%, 75%); }
+.fill-53 { fill: hsl(187.2deg, 50%, 75%); }
+.fill-54 { fill: hsl(190.8deg, 50%, 75%); }
+.fill-55 { fill: hsl(194.4deg, 50%, 75%); }
+.fill-56 { fill: hsl(198deg, 50%, 75%); }
+.fill-57 { fill: hsl(201.6deg, 50%, 75%); }
+.fill-58 { fill: hsl(205.2deg, 50%, 75%); }
+.fill-59 { fill: hsl(208.8deg, 50%, 75%); }
+.fill-60 { fill: hsl(212.4deg, 50%, 75%); }
+.fill-61 { fill: hsl(216deg, 50%, 75%); }
+.fill-62 { fill: hsl(219.6deg, 50%, 75%); }
+.fill-63 { fill: hsl(223.2deg, 50%, 75%); }
+.fill-64 { fill: hsl(226.8deg, 50%, 75%); }
+.fill-65 { fill: hsl(230.4deg, 50%, 75%); }
+.fill-66 { fill: hsl(234deg, 50%, 75%); }
+.fill-67 { fill: hsl(237.6deg, 50%, 75%); }
+.fill-68 { fill: hsl(241.2deg, 50%, 75%); }
+.fill-69 { fill: hsl(244.8deg, 50%, 75%); }
+.fill-70 { fill: hsl(248.4deg, 50%, 75%); }
+.fill-71 { fill: hsl(252deg, 50%, 75%); }
+.fill-72 { fill: hsl(255.6deg, 50%, 75%); }
+.fill-73 { fill: hsl(259.2deg, 50%, 75%); }
+.fill-74 { fill: hsl(262.8deg, 50%, 75%); }
+.fill-75 { fill: hsl(266.4deg, 50%, 75%); }
+.fill-76 { fill: hsl(270deg, 50%, 75%); }
+.fill-77 { fill: hsl(273.6deg, 50%, 75%); }
+.fill-78 { fill: hsl(277.2deg, 50%, 75%); }
+.fill-79 { fill: hsl(280.8deg, 50%, 75%); }
+.fill-80 { fill: hsl(284.4deg, 50%, 75%); }
+.fill-81 { fill: hsl(288deg, 50%, 75%); }
+.fill-82 { fill: hsl(291.6deg, 50%, 75%); }
+.fill-83 { fill: hsl(295.2deg, 50%, 75%); }
+.fill-84 { fill: hsl(298.8deg, 50%, 75%); }
+.fill-85 { fill: hsl(302.4deg, 50%, 75%); }
+.fill-86 { fill: hsl(306deg, 50%, 75%); }
+.fill-87 { fill: hsl(309.6deg, 50%, 75%); }
+.fill-88 { fill: hsl(313.2deg, 50%, 75%); }
+.fill-89 { fill: hsl(316.8deg, 50%, 75%); }
+.fill-90 { fill: hsl(320.4deg, 50%, 75%); }
+.fill-91 { fill: hsl(324deg, 50%, 75%); }
+.fill-92 { fill: hsl(327.6deg, 50%, 75%); }
+.fill-93 { fill: hsl(331.2deg, 50%, 75%); }
+.fill-94 { fill: hsl(334.8deg, 50%, 75%); }
+.fill-95 { fill: hsl(338.4deg, 50%, 75%); }
+.fill-96 { fill: hsl(342deg, 50%, 75%); }
+.fill-97 { fill: hsl(345.6deg, 50%, 75%); }
+.fill-98 { fill: hsl(349.2deg, 50%, 75%); }
+.fill-99 { fill: hsl(352.8deg, 50%, 75%); }
+.fill-100 { fill: hsl(356.4deg, 50%, 75%); }
+
+

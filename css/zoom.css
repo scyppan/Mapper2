@@ -1,0 +1,8 @@
+#map-container .shape {
+    stroke-width: var(--stroke-width, 1px);
+    stroke: #6b6a6a;
+}
+
+#map-container .shape:hover {
+    stroke-width: var(--highlight-width, 1.5px);
+}
