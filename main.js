@@ -54,5 +54,5 @@ function loadAssets(baseUrl, version) {
 // ── 3) initapp: after CSS/JS are in the DOM, start your SVG‐loader logic ───
 async function initapp(baseUrl, version) {
   await loadAssets(baseUrl, version);
-
+  console.log("testing");
 }
