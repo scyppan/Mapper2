@@ -52,17 +52,18 @@ function initapp(baseUrl, version) {
     fileInput.addEventListener('change', () => {
       loadSvgFile()
         .then(contents => {
-          svgobj = parseSVGContents(contents);
-          svgobj.districts = svgobj.districts
+          svgparsed = parseSVGContents(contents);
+          svgparsed.districts = svgparsed.districts
             .map(d => wrapDistrictInGroup(d))
             .filter(Boolean);
-          displaySVG(svgobj);
+          displaySVG(svgparsed);
           fileInput.classList.add('hidden');
           setViewportToWindow();
           storeOriginalViewBox();
           setMouseInputEventListeners();
           initKeyboardControls();
-          document.querySelector('svg')?.focus();
+          svgobj = document.querySelector('#map-container > svg');
+          svgobj.focus();
           console.log("application initialized");
         })
         .catch(error => console.error(error));

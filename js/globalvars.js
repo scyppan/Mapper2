@@ -1,4 +1,5 @@
 let svgobj;
+let svgparsed;
 let origviewbox;
 let zoomfactor = .1;
 let panfactor = 10;
