@@ -63,6 +63,7 @@ function initapp(baseUrl, version) {
           setMouseInputEventListeners();
           initKeyboardControls();
           svgobj = document.querySelector('#map-container > svg');
+          console.log("here's the svg obj", svgobj);
           svgobj.focus();
           console.log("application initialized");
         })
