@@ -63,6 +63,7 @@ function initapp(baseUrl, version) {
           setMouseInputEventListeners();
           initKeyboardControls();
           document.querySelector('svg')?.focus();
+          console.log("application initialized");
         })
         .catch(error => console.error(error));
     });
