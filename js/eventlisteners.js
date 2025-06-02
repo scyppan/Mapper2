@@ -1,4 +1,4 @@
-function setMouseInputEventListeners() {
+function setMouseInputEventListeners() {console.log("initmousecontrols");
   const svg = document.querySelector('#map-container svg');
   if (!svg) {
     console.error('SVG not found in #map-container.');
@@ -39,7 +39,7 @@ function setMouseInputEventListeners() {
   svg.addEventListener('wheel', wheelHandler, { passive: false });
 }
 
-function initKeyboardControls() {
+function initKeyboardControls() {console.log("initkeyboardcontrols");
   document.addEventListener('keydown', event => {
     const key = event.key.toLowerCase();
     console.log('Key pressed:', key);
