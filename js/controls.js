@@ -31,13 +31,11 @@ function panViewBox(direction) {
 }
 
 function getviewbox() {
-  const svg = document.querySelector('svg');
-  return svg.getAttribute('viewBox').split(' ').map(Number);
+  return svgobj.getAttribute('viewBox').split(' ').map(Number);
 }
 
 function setviewbox(viewBoxArray) {
-  const svg = document.querySelector('svg');
-  svg.setAttribute('viewBox', viewBoxArray.map(v => v.toFixed(2)).join(' '));
+  svgobj.setAttribute('viewBox', viewBoxArray.map(v => v.toFixed(2)).join(' '));
   updateStrokeWidth();
 }
 
@@ -56,7 +54,7 @@ function updateStrokeWidth() {
 }
 
 function setViewportToWindow() {
-  const svg = document.querySelector('svg');
+  
   let [origX, origY, origW, origH] = getviewbox();
   const winW = window.innerWidth * viewportAdjustment;
   const winH = window.innerHeight * viewportAdjustment;
@@ -65,7 +63,7 @@ function setViewportToWindow() {
   const newX = centerX - winW / 2;
   const newY = centerY - winH / 2;
   const newViewBox = [newX, newY, winW, winH].join(' ');
-  svg.setAttribute('viewBox', newViewBox);
+  svgobj.setAttribute('viewBox', newViewBox);
   console.log("New viewBox:", newViewBox);
 }
 

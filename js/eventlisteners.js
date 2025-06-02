@@ -1,42 +1,38 @@
 function setMouseInputEventListeners() {console.log("initmousecontrols");
-  const svg = document.querySelector('#map-container svg');
-  if (!svg) {
-    console.error('SVG not found in #map-container.');
-    return;
-  }
+  
   let isPanning = false, start = { x: 0, y: 0 }, startViewBox;
   function pointerDown(e) {
     isPanning = true;
     start = { x: e.clientX, y: e.clientY };
     startViewBox = getviewbox();
-    svg.setPointerCapture(e.pointerId);
-    svg.style.cursor = 'grabbing';
+    svgobjobj.setPointerCapture(e.pointerId);
+    svgobjobj.style.cursor = 'grabbing';
   }
   function pointerMove(e) {
     if (!isPanning) return;
     const dx = e.clientX - start.x,
           dy = e.clientY - start.y,
           [x, y, w, h] = startViewBox,
-          scaleX = w / svg.clientWidth,
-          scaleY = h / svg.clientHeight;
+          scaleX = w / svgobj.clientWidth,
+          scaleY = h / svgobj.clientHeight;
     setviewbox([x - dx * scaleX, y - dy * scaleY, w, h]);
   }
   function pointerUp(e) {
     if (!isPanning) return;
     isPanning = false;
-    svg.releasePointerCapture(e.pointerId);
-    svg.style.cursor = 'grab';
+    svgobj.releasePointerCapture(e.pointerId);
+    svgobj.style.cursor = 'grab';
   }
   function wheelHandler(e) {
     e.preventDefault();
     if (e.deltaY < 0) zoomViewBox(true);
     else zoomViewBox(false);
   }
-  svg.addEventListener('pointerdown', pointerDown);
-  svg.addEventListener('pointermove', pointerMove);
-  svg.addEventListener('pointerup', pointerUp);
-  svg.addEventListener('pointercancel', pointerUp);
-  svg.addEventListener('wheel', wheelHandler, { passive: false });
+  svgobj.addEventListener('pointerdown', pointerDown);
+  svgobj.addEventListener('pointermove', pointerMove);
+  svgobj.addEventListener('pointerup', pointerUp);
+  svgobj.addEventListener('pointercancel', pointerUp);
+  svgobj.addEventListener('wheel', wheelHandler, { passive: false });
 }
 
 function initKeyboardControls() {console.log("initkeyboardcontrols");
