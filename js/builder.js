@@ -9,7 +9,7 @@ function addShapeClass(shapeString) {
 }
 
 function wrapDistrictInGroup(districtContent) {
-  console.log("Processing district:", districtContent);
+  //console.log("Processing district:", districtContent);
   const id = parseElementForId(districtContent.content);
   if (!id) {
     console.error("Missing ID for the district:", districtContent);
