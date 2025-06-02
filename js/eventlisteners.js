@@ -5,8 +5,8 @@ function setMouseInputEventListeners() {console.log("initmousecontrols");
     isPanning = true;
     start = { x: e.clientX, y: e.clientY };
     startViewBox = getviewbox();
-    svgobjobj.setPointerCapture(e.pointerId);
-    svgobjobj.style.cursor = 'grabbing';
+    svgobj.setPointerCapture(e.pointerId);
+    svgobj.style.cursor = 'grabbing';
   }
   function pointerMove(e) {
     if (!isPanning) return;
