@@ -39,38 +39,40 @@ function setMouseInputEventListeners() {
   svg.addEventListener('wheel', wheelHandler, { passive: false });
 }
 
-document.addEventListener('keydown', function (event) {
-  switch (event.key.toLowerCase()) {
-    case 'w':
-    case 'arrowup':
-      panViewBox('up');
-      break;
-    case 'a':
-    case 'arrowleft':
-      panViewBox('left');
-      break;
-    case 's':
-    case 'arrowdown':
-      panViewBox('down');
-      break;
-    case 'd':
-    case 'arrowright':
-      panViewBox('right');
-      break;
-    case 'q':
-    case '+':
-    case '=':
-      zoomViewBox(true);
-      break;
-    case '-':
-    case 'e':
-      zoomViewBox(false);
-      break;
-    case 'home':
-    case 'r':
-      resetView();
-      break;
-    default:
-      console.log(`Key pressed: ${event.key}`);
-  }
-});
+function initKeyboardControls() {
+  document.addEventListener('keydown', event => {
+    const key = event.key.toLowerCase();
+    console.log('Key pressed:', key);
+    switch (key) {
+      case 'q':
+      case '+':
+      case '=':
+        zoomViewBox(true);
+        break;
+      case 'e':
+      case '-':
+        zoomViewBox(false);
+        break;
+      case 'w':
+      case 'arrowup':
+        panViewBox('up');
+        break;
+      case 'a':
+      case 'arrowleft':
+        panViewBox('left');
+        break;
+      case 's':
+      case 'arrowdown':
+        panViewBox('down');
+        break;
+      case 'd':
+      case 'arrowright':
+        panViewBox('right');
+        break;
+      case 'r':
+      case 'home':
+        resetView();
+        break;
+    }
+  });
+}

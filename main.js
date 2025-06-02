@@ -61,6 +61,7 @@ function initapp(baseUrl, version) {
           setViewportToWindow();
           storeOriginalViewBox();
           setMouseInputEventListeners();
+          initKeyboardControls();
           document.querySelector('svg')?.focus();
         })
         .catch(error => console.error(error));
