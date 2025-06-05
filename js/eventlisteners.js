@@ -8,6 +8,7 @@ function setMouseInputEventListeners() {console.log("initmousecontrols");
     svgobj.setPointerCapture(e.pointerId);
     svgobj.style.cursor = 'grabbing';
   }
+  
   function pointerMove(e) {
     if (!isPanning) return;
     const dx = e.clientX - start.x,
